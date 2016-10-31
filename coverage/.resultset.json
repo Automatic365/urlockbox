@@ -1,0 +1,159 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        5,
+        null,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/links_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/models/link.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/sessions_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/welcome_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/users_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1477939252
+  }
+}

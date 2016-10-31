@@ -1,0 +1,22 @@
+<nav>
+  <ul>
+    <li>Welcome, <%= current_user.email %></li>
+    <% if current_user %>
+    <li> <%= link_to "Sign Out", logout_path, method: :delete  %></li>
+    <% end %>
+  </ul>
+</nav>
+
+<h3>Submit a New Link</h3>
+<%= form_for (Link.new) do |f| %>
+<%= f.text_field :title, placeholder: 'Title' %>
+<%= f.text_field :url, placeholder: 'URL' %>
+<%= f.submit 'Submit Link' %>
+<% end %>
+
+<h1>My Links<h1>
+  <% @links.each do |link| %>
+  <%= link.title %>
+  <%= link.url %>
+  <%= link.read %></br>
+  <% end %>
