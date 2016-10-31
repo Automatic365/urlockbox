@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   root 'welcome#show'
 
-  delete '/logout' => 'sessions#destroy'
 
   resources :users, only: [:new, :create, :show]
   resources :links, only: [:index, :create]
@@ -11,5 +10,6 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
 end

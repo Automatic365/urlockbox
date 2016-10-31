@@ -67,12 +67,23 @@
         1,
         1,
         1,
-        0,
-        0,
+        1,
+        null,
         null
       ],
       "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/sessions_controller.rb": [
         1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
         null,
         1,
         1,
@@ -95,6 +106,10 @@
         null,
         1,
         1,
+        null,
+        null,
+        1,
+        null,
         null,
         null,
         1,
@@ -139,6 +154,6 @@
         0
       ]
     },
-    "timestamp": 1477937730
+    "timestamp": 1477939252
   }
 }
