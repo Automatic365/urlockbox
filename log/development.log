@@ -58,3 +58,77 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2016-10-31 11:58:19 -0400
+Processing by WelcomeController#show as HTML
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/views/welcome/show.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...ink_to 'Sign Up', new_user path );@output_buffer.safe_append...
+...                               ^):
+  
+app/views/welcome/show.html.erb:1: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.2ms)
+Started GET "/" for ::1 at 2016-10-31 11:58:39 -0400
+Processing by WelcomeController#show as HTML
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-10-31 11:58:43 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 62ms (Views: 36.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-10-31 12:13:42 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 49ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2016-10-31 12:17:39 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8rUcyJHMlD84GNmjd3Sqrf6QLGQbhkaifVvd9HIhUx+Ok8RtNP9c6uToQEiPeQ7WLDCK9hm2w532LnqT3wIkRQ==", "user"=>{"email"=>"jason.hanna01@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jason.hanna01@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jason.hanna01@gmail.com"], ["password_digest", "$2a$10$eRT1717AolTkfTZ5tE9D7eU3LdAIr03Zg8kZn9p8MRziU3TfYAcTu"], ["created_at", 2016-10-31 16:17:39 UTC], ["updated_at", 2016-10-31 16:17:39 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "jason.hanna01@gmail.com"], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 123ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 12:17:39 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (1.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/links" for ::1 at 2016-10-31 12:21:35 -0400
+Processing by LinksController#index as HTML
+  Rendering links/index.html.erb within layouts/application
+  Rendered links/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 50ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
