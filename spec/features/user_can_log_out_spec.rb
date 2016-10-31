@@ -10,7 +10,7 @@ RSpec.feature "user can log out" do
       click_link "Sign Out"
 
       expect(current_path).to eq root_path
-      expect(page).to have_content ("Sign In")
+      expect(page).to have_content ("Log In")
       expect(page).not_to have_content("Sign Out")
     end
   end
