@@ -1081,3 +1081,118 @@ Processing by LinksController#index as HTML
 Completed 200 OK in 33ms (Views: 25.5ms | ActiveRecord: 3.2ms)
 
 
+Started POST "/links" for ::1 at 2016-10-31 18:09:53 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6qsVdVUYyeY9esGepvdH742IN1p9uO3atrsD8BcEnTtYxWPXEYIujYJuObNsKINOqO3qTA/BsJqXu1XarsWEAQ==", "link"=>{"title"=>"Kristaps", "url"=>"Porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 11ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:09:53 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 44ms (Views: 37.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 18:10:09 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dlh1mtQ8olEUiTPF1C/AUE5pMXUQ3kFojVtC07HZvtLENgM4kKZFOqudy+ge8ATxawzsY2KnHCisWxT5CBin6A==", "link"=>{"title"=>"Kristaps", "url"=>"www.Porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 11ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:10:09 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 35ms (Views: 30.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 18:11:51 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wSrjiTY4eA5DwTEWu4EW9AOWLgCt4Hu44/zaqxMSrZlzRJUrcqKfZfzVyTtxXtJVJvPzFt+ZJvjC/IyBqtO0ow==", "link"=>{"title"=>"", "url"=>"http://www.porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 36ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:11:51 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 72ms (Views: 65.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 18:12:03 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/daz7H2rQxYKqBPnuN6NFz2DInsHLU51ibosKIfjtkNPuMVOOTGkfbW868pyAUm2GOb/bXVUEzWounoCPiKveQ==", "link"=>{"title"=>"Kristaps", "url"=>"http://www.porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[32mINSERT INTO "links" ("url", "title", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "http://www.porzingis.com"], ["title", "Kristaps"], ["created_at", 2016-10-31 22:12:03 UTC], ["updated_at", 2016-10-31 22:12:03 UTC], ["user_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 20ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:12:03 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 40.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 18:12:13 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LfD7Fwntf88YEb/SM7mrdWyT6YFvhY19Kn1OHTG1hN+fno21TXeYpKcFR//5Zm/USfY0lx380D0LfRg3iHSd5Q==", "link"=>{"title"=>"kp", "url"=>"Porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:12:13 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 20ms (Views: 15.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 18:12:20 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pHi9E7SsB/0sFdHqcEIEATHZT7dz7TvHMS/LGn/eI1wWFsux8DbglpMBKce6ncCgFLySoQGUZocQL50wxh86Zg==", "link"=>{"title"=>"kp", "url"=>"www.Porzingis.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 18:12:20 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 28ms (Views: 22.6ms | ActiveRecord: 1.1ms)
+
+
