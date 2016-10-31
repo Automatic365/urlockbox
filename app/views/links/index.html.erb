@@ -14,9 +14,31 @@
 <%= f.submit 'Submit Link' %>
 <% end %>
 
-<h1>My Links<h1>
-  <% @links.each do |link| %>
-  <%= link.title %>
-  <%= link.url %>
-  <%= link.read %></br>
-  <% end %>
+<h3>My Links<h3>
+  <table>
+    <tr>
+      <% @links.each do |link| %>
+
+      <th><u>Title</u></th>
+      <th><u>Link</u></th>
+      <% if link.read == false %>
+      <th><u>Mark As Read</u></th>
+      <% else %>
+      <th><u>Mark As Unread</u></th>
+      <% end %>
+    </tr>
+
+    <tbody class="links">
+
+      <tr data-id='<%= link.id %>' class='link'>
+        <td class="title"><%= link.title %></td>
+        <td class="url"><%= link.url %></td>
+        <% if link.read == false %>
+        <td><input type="checkbox" class="read-link"></td>
+        <% else %>
+        <td><input type="checkbox" class="unread-link"></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
