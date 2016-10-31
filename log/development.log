@@ -640,3 +640,284 @@ Processing by UsersController#new as HTML
 Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users/new" for ::1 at 2016-10-31 14:28:51 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 69ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-10-31 14:28:54 -0400
+Processing by WelcomeController#show as HTML
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 60ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-10-31 14:28:57 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (23.6ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `merge' for "Password":String):
+    1: <%= form_for(:session, url: login_path) do |f| %>
+    2:   <%= f.text_field :email_address, placeholder: 'Email' %>
+    3:   <%= f.text_field :password, 'Password' %>
+    4:   <%= f.submit "Log In" %>
+    5: <% end %>
+  
+app/views/sessions/new.html.erb:3:in `block in _app_views_sessions_new_html_erb___2513547509508287326_70170818432500'
+app/views/sessions/new.html.erb:1:in `_app_views_sessions_new_html_erb___2513547509508287326_70170818432500'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.7ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (107.8ms)
+Started GET "/login" for ::1 at 2016-10-31 14:29:21 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-10-31 14:29:40 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cSLo2XeVe5Nojr3tM0RC8o60+R0x5zTlgJf6no5JH/H9YvUhfC+zRPUidzG7MHLh0B2Z5XXDn4sZEtZRJSc2Gg==", "session"=>{"email_address"=>"jason.hanna01@gmail.cim", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (12.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2[0m  [["email_address", "jason.hanna01@gmail.cim"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 12.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.email_address does not exist
+LINE 1: SELECT  "users".* FROM "users" WHERE "users"."email_address"...
+                                             ^
+: SELECT  "users".* FROM "users" WHERE "users"."email_address" = $1 LIMIT $2):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.3ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (88.8ms)
+Started POST "/login" for ::1 at 2016-10-31 14:30:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cSLo2XeVe5Nojr3tM0RC8o60+R0x5zTlgJf6no5JH/H9YvUhfC+zRPUidzG7MHLh0B2Z5XXDn4sZEtZRJSc2Gg==", "session"=>{"email_address"=>"jason.hanna01@gmail.cim", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.email_address does not exist
+LINE 1: SELECT  "users".* FROM "users" WHERE "users"."email_address"...
+                                             ^
+: SELECT  "users".* FROM "users" WHERE "users"."email_address" IS NULL LIMIT $1):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (67.3ms)
+Started POST "/login" for ::1 at 2016-10-31 14:30:32 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cSLo2XeVe5Nojr3tM0RC8o60+R0x5zTlgJf6no5JH/H9YvUhfC+zRPUidzG7MHLh0B2Z5XXDn4sZEtZRJSc2Gg==", "session"=>{"email_address"=>"jason.hanna01@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email_address" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 6.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::UndefinedColumn: ERROR:  column users.email_address does not exist
+LINE 1: SELECT  "users".* FROM "users" WHERE "users"."email_address"...
+                                             ^
+: SELECT  "users".* FROM "users" WHERE "users"."email_address" IS NULL LIMIT $1):
+  
+app/controllers/sessions_controller.rb:4:in `create'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.3ms)
+Started POST "/login" for ::1 at 2016-10-31 14:30:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cSLo2XeVe5Nojr3tM0RC8o60+R0x5zTlgJf6no5JH/H9YvUhfC+zRPUidzG7MHLh0B2Z5XXDn4sZEtZRJSc2Gg==", "session"=>{"email_address"=>"jason.hanna01@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 38ms (Views: 29.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (9.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (7.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+Started GET "/" for ::1 at 2016-10-31 14:31:18 -0400
+Processing by WelcomeController#show as HTML
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2016-10-31 14:31:21 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 53ms (Views: 25.3ms | ActiveRecord: 15.4ms)
+
+
+Started POST "/users" for ::1 at 2016-10-31 14:31:30 -0400
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wzhc56fv6pBUyqKhhjXzsvfNmFlP3Os6/4d/GIzvByNPeEEfrFUiR8lmaH0OQcOhqWT4oQv4QFRmAlPXJ4EuyA==", "user"=>{"email"=>"jason", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jason"], ["LIMIT", 1]]
+  [1m[35mSQL (2.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "jason"], ["password_digest", "$2a$10$/g5etPmrpAYL0TcvNu0yV.60BxnK3h9hGTvm/SPvG8ITANs0TuVcO"], ["created_at", 2016-10-31 18:31:30 UTC], ["updated_at", 2016-10-31 18:31:30 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "jason"], ["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 84ms (ActiveRecord: 6.9ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 14:31:30 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 16.6ms)
+
+
+  
+NoMethodError (undefined method `of' for #<Class:0x007fa3d31267d0>):
+  
+app/models/link.rb:3:in `<class:Link>'
+app/models/link.rb:1:in `<top (required)>'
+app/controllers/links_controller.rb:5:in `index'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.4ms)
+Started GET "/links" for ::1 at 2016-10-31 14:33:01 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 6.0ms)
+
+
+  
+NoMethodError (undefined method `validate_presence_of' for #<Class:0x007fa3d5651d48>
+Did you mean?  validates_presence_of
+               validates_absence_of):
+  
+app/models/link.rb:4:in `<class:Link>'
+app/models/link.rb:1:in `<top (required)>'
+app/controllers/links_controller.rb:5:in `index'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.2ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.6ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (75.1ms)
+Started GET "/links" for ::1 at 2016-10-31 14:33:10 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.4ms)
+
+
+  
+ArgumentError (Unknown validator: 'UrlValidator'):
+  
+app/models/link.rb:5:in `<class:Link>'
+app/models/link.rb:1:in `<top (required)>'
+app/controllers/links_controller.rb:5:in `index'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.8ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (68.1ms)
+Started GET "/links" for ::1 at 2016-10-31 14:33:54 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (2.0ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 69ms (Views: 32.3ms | ActiveRecord: 8.0ms)
+
+
+Started DELETE "/logout" for ::1 at 2016-10-31 14:34:00 -0400
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IhVUqCDibNS9rwcJBANAReZ1Kb8I6UC88KorqwYffryuVUlQK1ikAyADzdWMd3BWuNxJR0zN69JpLwdkrXFXVw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-10-31 14:34:00 -0400
+Processing by WelcomeController#show as HTML
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 21ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2016-10-31 14:34:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2016-10-31 14:34:08 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tjj8912llbc6/B/KYom+tAtdQuQgsOq7yNJs/9bbH4n8VopVGT9y3IXo5+eoVnoVLjif8lLJt/vp0jrVbxoGsw==", "session"=>{"email"=>"jason", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jason"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/links
+Completed 302 Found in 73ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 14:34:08 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/links" for ::1 at 2016-10-31 14:34:19 -0400
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TZkXyM1hSCSAiXfCaH7Y41iGKDcIP7He04ZQXb5VOc//92FqifuvTz+dj++ioRxCfeP1IXpG7J7yhgZ3B5Qg9Q==", "link"=>{"title"=>"knicks", "url"=>"realgm.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (6.6ms)[0m  [1m[32mINSERT INTO "links" ("url", "title", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "realgm.com"], ["title", "knicks"], ["created_at", 2016-10-31 18:34:19 UTC], ["updated_at", 2016-10-31 18:34:19 UTC], ["user_id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 25ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 14:34:19 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 27ms (Views: 17.9ms | ActiveRecord: 4.1ms)
+
+

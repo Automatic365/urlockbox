@@ -7,10 +7,11 @@
   </ul>
 </nav>
 
+<h3>Submit a New Link</h3>
 <%= form_for (Link.new) do |f| %>
 <%= f.text_field :title, placeholder: 'Title' %>
 <%= f.text_field :url, placeholder: 'URL' %>
-<%= f.submit %>
+<%= f.submit 'Submit Link' %>
 <% end %>
 
 <h1>My Links<h1>

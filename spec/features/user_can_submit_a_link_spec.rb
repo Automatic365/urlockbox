@@ -19,14 +19,14 @@ RSpec.feature "user can create a link submission" do
       link = Link.last
       expect(link.url).to eq(url)
       expect(link.title).to eq(title)
-      expect(link.status).to eq("false")
+      expect(link.read).to eq(false)
       expect(link.user).to eq(user)
 
       expect(current_path).to eq links_path
 
       expect(page).to have_content link.url
       expect(page).to have_content link.title
-      expect(page).to have_content link.status
+      expect(page).to have_content link.read
 
     end
   end
