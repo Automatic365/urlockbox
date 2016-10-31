@@ -10,8 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to links_path
     else
-      flash.error 'Incorrect Info. Try Again'
-      render :new
+      flash[:error] = 'Incorrect Info. Try Again'
+      redirect_to new_user_path
     end
   end
 
