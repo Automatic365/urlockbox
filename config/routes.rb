@@ -3,9 +3,13 @@ Rails.application.routes.draw do
 
   root 'welcome#show'
 
-  delete '/logout' => 'sessions#destroy'
 
-  resources :users, only: [:new, :create]
-  resources :links, only: [:index]
+  resources :users, only: [:new, :create, :show]
+  resources :links, only: [:index, :create]
+
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
 end
