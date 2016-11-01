@@ -14,6 +14,6 @@ RSpec.describe "update read links", type: :request do
 
     link.reload
 
-    expect(link.title).to eq("Rule")
+    expect(link.title).to eq("Rules")
   end
 end
