@@ -20,17 +20,28 @@ $(document).ready(function() {
     var linkId = $(this).parents('tr').data('id');
     var linkParams = {link: {id: linkId,
       read: false}};
-      var linkRow = $(this).parents('tr');
-      $.ajax({
-        type: 'PATCH',
-        url: '/api/v1/links/' + linkId,
-        data: linkParams,
-        success: function(){
-          linkRow.find(".unread-link").hide();
-          linkRow.addClass('blue');
-        }
-      });
-    }
-  );
+    var linkRow = $(this).parents('tr');
+    $.ajax({
+      type: 'PATCH',
+      url: '/api/v1/links/' + linkId,
+      data: linkParams,
+      success: function(){
+        linkRow.find(".unread-link").hide();
+        linkRow.addClass('blue');
+      }
+    });
+  });
 
+  $(".all-link").on('blur', ".title" ,function(){
+    var linkId = $(this).parents('tr').data('id');
+    var linkParams = { link: {
+                        id: linkId,
+                        title: $(this).text()
+                      }};
+    $.ajax({
+      type: 'PATCH',
+      url: '/api/v1/links/' + linkId,
+      data: linkParams
+    });
+   });
 });

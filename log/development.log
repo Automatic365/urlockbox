@@ -1967,3 +1967,403 @@ Processing by LinksController#index as HTML
 Completed 200 OK in 39ms (Views: 32.4ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/links" for ::1 at 2016-10-31 20:30:31 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (62.3ms)
+Completed 200 OK in 284ms (Views: 172.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:31:28 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (3.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (409.0ms)
+Completed 500 Internal Server Error in 433ms (ActiveRecord: 6.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_link_path' for #<#<Class:0x007fa916526068>:0x007fa914e829b0>
+Did you mean?  edit_polymorphic_path):
+    38:         <% else %>
+    39:         <td><input type="checkbox" class="unread-link"></td>
+    40:         <% end %>
+    41:         <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
+    42:       </tr>
+    43:       <% end %>
+    44:     </tbody>
+  
+app/views/links/index.html.erb:41:in `block in _app_views_links_index_html_erb___4553995414311316289_70182088494980'
+app/views/links/index.html.erb:20:in `_app_views_links_index_html_erb___4553995414311316289_70182088494980'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (72.4ms)
+Started GET "/links" for ::1 at 2016-10-31 20:33:11 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 127ms (Views: 88.1ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/links/4/edit" for ::1 at 2016-10-31 20:33:16 -0400
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (3.6ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 74ms (ActiveRecord: 3.9ms)
+
+
+  
+ActionController::UnknownFormat (LinksController#edit is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not… nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.0.0.1) lib/action_controller/metal/implicit_render.rb:56:in `default_render'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.0.0.1) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:188:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:126:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:455:in `call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `block in instrument'
+activesupport (5.0.0.1) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.0.0.1) lib/active_support/notifications.rb:164:in `instrument'
+actionpack (5.0.0.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.0.0.1) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+activerecord (5.0.0.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.0.1) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.0.1) lib/active_record/migration.rb:552:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.0ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.5ms)
+  Rendered /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.8ms)
+Started GET "/links/4/edit" for ::1 at 2016-10-31 20:34:30 -0400
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (1.0ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering links/edit.html.erb within layouts/application
+  Rendered links/edit.html.erb within layouts/application (62.4ms)
+Completed 200 OK in 154ms (Views: 132.8ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/links/4" for ::1 at 2016-10-31 20:34:36 -0400
+Processing by LinksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NNDF22Ls5qOTTUXpkrlu+iyevWSAIHV4DOVZ29f7sVKGvrN5JnYByCxZvcRYZqpbCftgcvJZKDgt5Q/xbjqoaA==", "link"=>{"title"=>"test", "url"=>"http://link.com"}, "commit"=>"Update Link", "id"=>"4"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (4.6ms)[0m  [1m[33mUPDATE "links" SET "title" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["title", "test"], ["updated_at", 2016-11-01 00:34:36 UTC], ["id", 4]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 44ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:34:36 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (4.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 63ms (Views: 52.3ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/links/4/edit" for ::1 at 2016-10-31 20:34:47 -0400
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering links/edit.html.erb within layouts/application
+  Rendered links/edit.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 23.7ms | ActiveRecord: 5.4ms)
+
+
+Started PATCH "/links/4" for ::1 at 2016-10-31 20:34:51 -0400
+Processing by LinksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zvh8ZZaduHh7rtK8IzxU7nxEwdeiOOp4d8SExu38G1l8lgrH0gdfE8S6KpHp45BPWSEcwdBBtzhWxNLsVD0CYw==", "link"=>{"title"=>"test", "url"=>"htt://link.com"}, "commit"=>"Update Link", "id"=>"4"}
+  [1m[36mUser Load (11.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Redirected to http://localhost:3000/links/4/edit
+Completed 302 Found in 22ms (ActiveRecord: 11.6ms)
+
+
+Started GET "/links/4/edit" for ::1 at 2016-10-31 20:34:52 -0400
+Processing by LinksController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering links/edit.html.erb within layouts/application
+  Rendered links/edit.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/links/4" for ::1 at 2016-10-31 20:34:54 -0400
+Processing by LinksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q99/758UzmVK4Q7iuxnddv2mw/JEMSxtusFlGqLKSzPxsQlN244pDvX19s9xxhnX2MMe5DZIcS2bwTMwGwtSCQ==", "link"=>{"title"=>"test", "url"=>"http://link.com"}, "commit"=>"Update Link", "id"=>"4"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 6ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:34:54 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 26ms (Views: 22.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:37:13 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (6.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 197ms (Views: 170.1ms | ActiveRecord: 6.9ms)
+
+
+Started PATCH "/api/v1/links/2" for ::1 at 2016-10-31 20:37:17 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"2", "read"=>"true"}, "id"=>"2"}
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (3.8ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:37:17 UTC], ["id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 20ms (ActiveRecord: 5.1ms)
+
+
+Started PATCH "/api/v1/links/3" for ::1 at 2016-10-31 20:37:18 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"3", "read"=>"true"}, "id"=>"3"}
+  [1m[36mLink Load (1.8ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:37:18 UTC], ["id", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 16ms (ActiveRecord: 4.9ms)
+
+
+Started PATCH "/api/v1/links/4" for ::1 at 2016-10-31 20:37:19 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"4", "read"=>"true"}, "id"=>"4"}
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.6ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:37:19 UTC], ["id", 4]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 14ms (ActiveRecord: 4.7ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:37:21 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 42ms (Views: 36.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:37:47 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.8ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 131ms (Views: 118.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:37:53 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 50ms (Views: 30.4ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:38:30 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.4ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 322ms (Views: 287.3ms | ActiveRecord: 1.3ms)
+
+
+Started PATCH "/api/v1/links/2" for ::1 at 2016-10-31 20:38:33 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"2", "read"=>"false"}, "id"=>"2"}
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", false], ["updated_at", 2016-11-01 00:38:33 UTC], ["id", 2]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 25ms (ActiveRecord: 3.1ms)
+
+
+Started PATCH "/api/v1/links/3" for ::1 at 2016-10-31 20:38:34 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"3", "read"=>"false"}, "id"=>"3"}
+  [1m[36mLink Load (1.8ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", false], ["updated_at", 2016-11-01 00:38:34 UTC], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 19ms (ActiveRecord: 4.2ms)
+
+
+Started PATCH "/api/v1/links/4" for ::1 at 2016-10-31 20:38:35 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"4", "read"=>"false"}, "id"=>"4"}
+  [1m[36mLink Load (0.7ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (5.2ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", false], ["updated_at", 2016-11-01 00:38:35 UTC], ["id", 4]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 27ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:38:38 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (1.5ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 61ms (Views: 48.2ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/api/v1/links/2" for ::1 at 2016-10-31 20:38:40 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"2", "read"=>"true"}, "id"=>"2"}
+  [1m[36mLink Load (7.4ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.4ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:38:40 UTC], ["id", 2]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 30ms (ActiveRecord: 13.2ms)
+
+
+Started PATCH "/api/v1/links/3" for ::1 at 2016-10-31 20:38:41 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"3", "read"=>"true"}, "id"=>"3"}
+  [1m[36mLink Load (0.5ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (19.4ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:38:41 UTC], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 65ms (ActiveRecord: 40.9ms)
+
+
+Started PATCH "/api/v1/links/4" for ::1 at 2016-10-31 20:38:41 -0400
+Processing by Api::V1::LinksController#update as JSON
+  Parameters: {"link"=>{"id"=>"4", "read"=>"true"}, "id"=>"4"}
+  [1m[36mLink Load (0.3ms)[0m  [1m[34mSELECT  "links".* FROM "links" WHERE "links"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameter: id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "links" SET "read" = $1, "updated_at" = $2 WHERE "links"."id" = $3[0m  [["read", true], ["updated_at", 2016-11-01 00:38:41 UTC], ["id", 4]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 204 No Content in 11ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/links" for ::1 at 2016-10-31 20:38:43 -0400
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering links/index.html.erb within layouts/application
+  [1m[36mLink Load (0.2ms)[0m  [1m[34mSELECT "links".* FROM "links" WHERE "links"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered links/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 29.1ms | ActiveRecord: 2.0ms)
+
+

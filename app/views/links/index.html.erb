@@ -31,13 +31,14 @@
     <tbody class="all-links">
 
       <tr data-id='<%= link.id %>' class='link'>
-        <td class="title"><%= link.title %></td>
-        <td class="url"><%= link.url %></td>
+        <td contenteditable="true" class="title"><%= link.title %></td>
+        <td contenteditable="true" class="url"><%= link.url %></td>
         <% if link.read == false %>
         <td><input type="checkbox" class="read-link"></td>
         <% else %>
         <td><input type="checkbox" class="unread-link"></td>
         <% end %>
+        <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
       </tr>
       <% end %>
     </tbody>
