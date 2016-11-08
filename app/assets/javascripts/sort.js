@@ -1,8 +1,8 @@
 $(document).ready(function(){
-  $("body").on('click', '#sort-alphabetically', function(){
-    var alphabetized = alphabetize($('.every-link'));
-    $(".all-links").html(alphabetized);
-    $(".all-links").prepend("tr class='table-row><th><u>Title</u></th><th><u>Link</u></th><th><u>Read?</u></th></tr>");
+  $("#sort-alphabetically").on('click', function(){
+    var alphabetized = alphabetize($('.all-links'));
+    $(".every-link").html(alphabetized);
+    $(".every-link").prepend("tr class='table-row><th><u>Title</u></th><th><u>Link</u></th><th><u>Read?</u></th></tr>");
   });
 });
 
