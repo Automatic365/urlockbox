@@ -1,4 +1,5 @@
 class Api::V1::LinksController < ApiBaseController
+  respond_to :json
 
   def update
     @link = Link.find(params[:id])
