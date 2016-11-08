@@ -1,16 +1,16 @@
-
-$(document).ready(function(){
+$(document).ready(function() {
   $(".filter-read").on("click", function (){
-    $(".read_link").hide();
-    $(".unread_link").show();
-  });
-  $(".filter-unread").on("click", function (){
-    $(".unread_link").hide();
-    $(".read_link").show();
+    $(".read-link").hide();
+    $(".unread-link").show();
   });
 
-  $(".all").on("click", function (){
-    $(".unread_link").show();
-    $(".read_link").show();
+  $(".filter-unread").on("click", function (){
+    $(".unread-link").hide();
+    $(".read-link").show();
+  });
+
+  $(".all").on("click", function () {
+    $(".unread-link").show();
+    $(".read-link").show();
   });
 });
