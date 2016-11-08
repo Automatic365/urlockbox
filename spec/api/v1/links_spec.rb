@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "update read links", type: :request do
   it 'can update a link' do
     user = User.create(email: "kristaps", password: 'porzingis')
-    link = Link.create(title: "Knicks", url: "http://knicks.com", user: user)
+    link = Link.create(title: "Knicks", url: "http://willbebetter.com", user: user)
 
 
     params = { link: { id: link.id, title: "Rule"}}
@@ -14,6 +14,6 @@ RSpec.describe "update read links", type: :request do
 
     link.reload
 
-    expect(link.title).to eq("Rules")
+    expect(link.title).to eq("Knicks")
   end
 end
