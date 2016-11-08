@@ -1,10 +1,16 @@
-$( document ).ready(function() {
-  $(".read").on("click", function (){
-    $('td').each(function(){
-      var read = $(this).val();
-      if (read === 'false') {
-        $(this).hide();
-      }
-    });
+
+$(document).ready(function(){
+  $(".filter-read").on("click", function (){
+    $(".read_link").hide();
+    $(".unread_link").show();
+  });
+  $(".filter-unread").on("click", function (){
+    $(".unread_link").hide();
+    $(".read_link").show();
+  });
+
+  $(".all").on("click", function (){
+    $(".unread_link").show();
+    $(".read_link").show();
   });
 });

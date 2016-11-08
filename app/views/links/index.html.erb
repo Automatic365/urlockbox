@@ -9,39 +9,47 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
   <%= f.submit %>
-<% end %>
+<% end %></br>
+
+<div class="searching">
+  Search for Links:<input class="nav-right" type="text" placeholder="Search" required id="search-bar">
+</div>
+
+  <%= render 'filter_selection' %>
 
 <h1>My Links</h1></br>
-<h2>Filter by read/unread</h2>
 
-<form action="">
-
-  <input type="radio" name="filter" class="read"> Read<br>
-  <input type="radio" name="filter" class="unread"> Unread<br>
-</form></br>
 <table>
   <tr>
 
     <th><u>Title</u></th>
     <th><u>Link</u></th>
     <th><u>Read?</u></th>
-    <th><u>Mark As Read</u></th>
-    <th><u>Mark As Unread</u></th>
   </tr>
+
   <% @links.each do |link| %>
+    <% if link.read %>
+      <tbody class="all-link">
 
-  <tbody class="each-link">
+        <tr data-id='<%= link.id %>' class='unread_link'>
+          <td class="title-text" ><%= link.title %></td>
+          <td class="url-text" id="read-links"><%= link.url %></td>
+          <td class="read-text"><%= link.read %></td>
+          <td><input type="button" value="Mark as Unread" class="mark-unread" ></td><br>
+          <td><%= button_to "Edit Link", edit_link_path(link), method: :get%></td>
+        <tr>
+      </tbody>
+    <% else %>
+      <tbody class="all-link" id="unreadme">
+        <tr data-id='<%= link.id %>' class='read_link'>
 
-    <tr data-id='<%= link.id %>' class='link'>
-      <td class="title-text"><%= link.title %></td>
-      <td class="url-text"><%= link.url %></td>
-      <td class="read-text"><%= link.read %></td>
-
-
-      <td><input type="checkbox" class="read-link"></td>
-      <td><input type="checkbox" class="unread-link"></td>
-      <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
-    </tr>
+          <td class="title-text" ><%= link.title %></td>
+          <td class="url-text" id="unread-links" ><%= link.url %></td>
+          <td class="read-text" ><%= link.read %></td>
+          <td><input type="button" value="Mark as Read" class="mark-read" ></td><br>
+          <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
+        </tr>
+      </tbody>
     <% end %>
-</tbody>
+  <% end %>
 </table>
