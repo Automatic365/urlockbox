@@ -11,7 +11,7 @@ RSpec.feature "user can create a link submission" do
 
       visit links_path
 
-      expect(page).to have_content("Submit a New Link")
+      expect(page).to have_content("Add a New Link")
       fill_in "link[title]", with: title
       fill_in "link[url]", with: url
       click_button "Submit Link"
