@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.all-link').on('click', '.mark-read', function(){
+  $('.all-links').on('click', '.mark-read', function(){
       var linkId = $(this).parents('tr').data('id');
       var linkParams = {link: {id: linkId,
         read: true}};
@@ -19,7 +19,7 @@ $(document).ready(function(){
         });
       });
 
-  $('.all-link').on('click', '.mark-unread', function(){
+  $('.all-links').on('click', '.mark-unread', function(){
     var linkId = $(this).parents('tr').data('id');
     var linkParams = {link: {id: linkId,
       read: false}};
@@ -39,7 +39,7 @@ $(document).ready(function(){
     });
   });
 
-  $('.all-link').on('blur', '.title-text' ,function(){
+  $('.all-links').on('blur', '.title-text' ,function(){
     var linkId = $(this).parents('tr').data('id');
     var linkParams = { link: {
                         id: linkId,

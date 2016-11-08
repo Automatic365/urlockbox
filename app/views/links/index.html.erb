@@ -29,7 +29,7 @@
 
   <% @links.each do |link| %>
     <% if link.read %>
-      <tbody class="all-link">
+      <tbody class="all-links">
 
         <tr data-id='<%= link.id %>' class='unread_link'>
           <td class="title-text" ><%= link.title %></td>
@@ -40,7 +40,7 @@
         <tr>
       </tbody>
     <% else %>
-      <tbody class="all-link" id="unreadme">
+      <tbody class="all-links" id="unreadme">
         <tr data-id='<%= link.id %>' class='read_link'>
 
           <td class="title-text" ><%= link.title %></td>
