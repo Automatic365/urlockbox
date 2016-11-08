@@ -1,7 +1,7 @@
-.strikethrough, .true {
-  text-decoration: line-through;
+#unread-links {
+  color: blue;
 }
 
-.blue {
-  color: blue;
+#read-links {
+  text-decoration: line-through;
 }

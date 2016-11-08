@@ -1,45 +1,55 @@
-<nav>
-  <ul>
-    <li>Welcome, <%= current_user.email %></li>
-    <% if current_user %>
-    <li> <%= link_to "Sign Out", logout_path, method: :delete  %></li>
-    <% end %>
-  </ul>
-</nav>
-
-<h3>Submit a New Link</h3>
-<%= form_for (Link.new) do |f| %>
-<%= f.text_field :title, placeholder: 'Title' %>
-<%= f.text_field :url, placeholder: 'URL' %>
-<%= f.submit 'Submit Link' %>
+<% if current_user %>
+  <%= link_to "Sign Out", logout_path %>
 <% end %>
 
-<h3>My Links<h3>
-  <table>
-    <tr>
-      <% @links.each do |link| %>
+<h1>Add a New Link:</h1></br>
+<%= form_for(Link.new) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %></br>
 
-      <th><u>Title</u></th>
-      <th><u>Link</u></th>
-      <% if link.read == false %>
-      <th><u>Mark As Read</u></th>
-      <% else %>
-      <th><u>Mark As Unread</u></th>
-      <% end %>
-    </tr>
+<div class="searching">
+  Search for Links:<input class="nav-right" type="text" placeholder="Search" required id="search-bar">
+</div>
 
-    <tbody class="all-links">
+  <%= render 'filter_selection' %>
 
-      <tr data-id='<%= link.id %>' class='link'>
-        <td contenteditable="true" class="title"><%= link.title %></td>
-        <td contenteditable="true" class="url"><%= link.url %></td>
-        <% if link.read == false %>
-        <td><input type="checkbox" class="read-link"></td>
-        <% else %>
-        <td><input type="checkbox" class="unread-link"></td>
-        <% end %>
-        <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+<h1>My Links</h1></br>
+
+<table class="every-link">
+  <tr class="table-row">
+
+    <th><u>Title</u></th>
+    <th><u>Link</u></th>
+    <th><u>Read?</u></th>
+  </tr>
+
+  <% @links.each do |link| %>
+    <% if link.read %>
+      <tbody class="all-links">
+
+        <tr data-id='<%= link.id %>' class='unread-link'>
+          <td class="title-text" ><%= link.title %></td>
+          <td class="url-text" id="read-links"><%= link.url %></td>
+          <td class="read-text"><%= link.read %></td>
+          <td><input type="button" value="Mark as Unread" class="mark-unread" ></td><br>
+          <td><%= button_to "Edit Link", edit_link_path(link), method: :get%></td>
+        <tr>
+      </tbody>
+    <% else %>
+      <tbody class="all-links" id="unreadme">
+        <tr data-id='<%= link.id %>' class='read-link'>
+
+          <td class="title-text" ><%= link.title %></td>
+          <td class="url-text" id="unread-links" ><%= link.url %></td>
+          <td class="read-text" ><%= link.read %></td>
+          <td><input type="button" value="Mark as Read" class="mark-read" ></td><br>
+          <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% end %>
+</table>
