@@ -37,11 +37,11 @@
         1,
         null,
         1,
-        27,
+        36,
         null,
         null,
         1,
-        17,
+        20,
         null,
         null,
         null
@@ -81,7 +81,7 @@
         1,
         null,
         1,
-        10,
+        13,
         null,
         null,
         1,
@@ -129,10 +129,10 @@
         1,
         null,
         1,
-        4,
-        4,
-        4,
-        4,
+        7,
+        7,
+        7,
+        7,
         null,
         0,
         0,
@@ -174,7 +174,6 @@
         0,
         0,
         0,
-        0,
         0
       ],
       "/Users/Automatic365/Turing/1605/mod_4/projects/urlockbox/app/controllers/api_base_controller.rb": [
@@ -194,6 +193,6 @@
         0
       ]
     },
-    "timestamp": 1478640707
+    "timestamp": 1478642899
   }
 }

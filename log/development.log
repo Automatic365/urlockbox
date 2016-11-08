@@ -2442,3 +2442,4 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 396ms (Views: 393.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m

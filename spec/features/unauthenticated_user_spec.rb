@@ -59,7 +59,7 @@ RSpec.feature 'unauthenticated user visits root page' do
     click_on "Sign Up"
 
     expect(User.count).to eq(1)
-    expect(page).to have_content("Incorrect Info. Try Again")
+    expect(page).to have_content("Incorrect email/password. Try again")
 
   end
 
@@ -76,6 +76,6 @@ RSpec.feature 'unauthenticated user visits root page' do
 
     expect(current_path).to eq(new_user_path)
     expect(User.count).to eq(0)
-    expect(page).to have_content("Incorrect Info. Try Again")
+    expect(page).to have_content("Incorrect email/password. Try again")
   end
 end
