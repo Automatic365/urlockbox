@@ -4,24 +4,25 @@
 
 <h1>Add a New Link:</h1></br>
 <%= form_for(Link.new) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :url %>
-  <%= f.text_field :url %>
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.text_field :url, placeholder: "URL" %>
   <%= f.submit 'Submit Link' %>
 <% end %></br>
+
+<p>Email your new link to a friend! Just enter your URL in this format: 'http://example.com \:cc friend@example.com' </p>
+<p>Note: URL <b>must</b> be prefaced by 'http:' or 'https:'</p>
+<br>
 
 <div class="searching">
   Search for Links:<input class="nav-right" type="text" placeholder="Search" required id="search-bar">
 </div>
 
-  <%= render 'filter_selection' %>
+  <%= render 'filter_selection' %><br>
 
-<h1>My Links</h1></br>
 
-<table class="every-link">
+<br><h1>My Links</h1>
+<table class="every-link" style="width:100%">
   <tr class="table-row">
-
     <th><u>Title</u></th>
     <th><u>Link</u></th>
     <th><u>Read?</u></th>
@@ -44,7 +45,7 @@
         <tr data-id='<%= link.id %>' class='read-link'>
 
           <td class="title-text" ><%= link.title %></td>
-          <td class="url-text" id="unread-links" ><%= link.url %></td>
+          <td class="url-text" id="unread-links" ><%= link_to link.url, link.url %></td>
           <td class="read-text" ><%= link.read %></td>
           <td><input type="button" value="Mark as Read" class="mark-read" ></td><br>
           <td><%= button_to "Edit Link", edit_link_path(link), method: :get %></td>
