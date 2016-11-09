@@ -42,7 +42,7 @@ RSpec.feature "links" do
     click_on "Log In"
 
     expect(page).to have_content("Title")
-    expect(page).to have_content("Url")
+    expect(page).to have_content("URL")
     expect(page).to have_button("Submit Link")
   end
 
@@ -57,13 +57,12 @@ RSpec.feature "links" do
     click_on "Log In"
 
     fill_in "Title", with: "Link 1"
-    fill_in "Url", with: "com"
+    fill_in "URL", with: "com"
 
     click_on "Submit Link"
     expect(current_path).to eq(links_path)
     expect(page).to have_no_content("Link 1")
-    expect(page).to have_no_content("com")
     expect(user.links.count).to eq(0)
-    expect(page).to have_content("Invalid Url")
+    expect(page).to have_content("Invalid URL")
   end
 end

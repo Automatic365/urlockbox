@@ -60,6 +60,6 @@ RSpec.feature 'user can edit urls' do
     click_on "Update Link"
 
     expect(current_path).to eq(edit_link_path(link))
-    expect(page).to have_content("Your url is invalid")
+    expect(page).to have_content("Your URL is invalid")
   end
 end
