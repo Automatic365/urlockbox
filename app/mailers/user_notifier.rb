@@ -1,5 +1,5 @@
 class UserNotifier < ApplicationMailer
-  def send_link(current_user, recipient, link)
+  def email_link(current_user, recipient, link)
     @user = current_user
     @recipient = recipient
     @link = link

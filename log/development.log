@@ -2443,3 +2443,68 @@ Completed 200 OK in 396ms (Views: 393.0ms | ActiveRecord: 0.0ms)
 
 
   [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/links" for ::1 at 2016-11-08 17:44:39 -0700
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from raise_in_transactional_callbacks= at /Users/Automatic365/.rvm/gems/ruby-2.3.0/gems/activerecord-5.0.0.1/lib/active_record/transactions.rb:283)
+  [1m[36mActiveRecord::SchemaMigration Load (2.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LinksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jaJQpfueSWIPYg0DgNq6pBP7WIcEKXsT/PwUaNgKOclG4DYGnkHDo+ctMDO6iIJogNRH5xEHUp29arKGKbOyaw==", "link"=>{"title"=>"test email", "url"=>"http://example.com \\:cc jason.hanna01@gmail.com"}, "commit"=>"Submit Link"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "links" ("url", "title", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["url", "http://example.com"], ["title", "test email"], ["created_at", 2016-11-09 00:44:40 UTC], ["updated_at", 2016-11-09 00:44:40 UTC], ["user_id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_notifier/email_link.html.erb within layouts/mailer
+  Rendered user_notifier/email_link.html.erb within layouts/mailer (2.3ms)
+  Rendering user_notifier/email_link.text.erb within layouts/mailer
+  Rendered user_notifier/email_link.text.erb within layouts/mailer (0.5ms)
+UserNotifier#email_link: processed outbound mail in 388.8ms
+Sent mail to jason.hanna01@gmail.com (22.6ms)
+Date: Tue, 08 Nov 2016 17:44:41 -0700
+From: no-reply@urlockbox.com
+To: jason.hanna01@gmail.com
+Message-ID: <58227179f4028_313c3fe79c2a6ed06634a@Jasons-MBP-2.domain.mail>
+Subject: jason sent a link to you!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_58227179efc33_313c3fe79c2a6ed066291";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_58227179efc33_313c3fe79c2a6ed066291
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h3>Hey jason.hanna01@gmail.com! jason sent you a link!</h3>
+
+<p>Check out the link at http://example.com!</p>
+
+
+----==_mimepart_58227179efc33_313c3fe79c2a6ed066291
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h3>Hey jason.hanna01@gmail.com! jason sent you a link!</h3>
+
+<p>Check out the link at http://example.com!</p>
+
+  </body>
+</html>
+
+----==_mimepart_58227179efc33_313c3fe79c2a6ed066291--
+
+No template found for LinksController#create, rendering head :no_content
+Completed 204 No Content in 1223ms (ActiveRecord: 15.1ms)
+
+
