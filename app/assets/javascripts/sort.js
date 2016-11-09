@@ -6,8 +6,8 @@ $(document).ready(function(){
   });
 });
 
-function alphabetize(links) {
-  return links.sort(function (a, b) {
+function alphabetize(links){
+  return links.sort(function (a, b){
     return $(a).find(".title-text").text() > $(b).find(".title-text").text();
   });
 }

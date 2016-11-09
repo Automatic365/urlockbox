@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
   $(".filter-read").on("click", function (){
     $(".read-link").hide();
     $(".unread-link").show();
@@ -9,7 +9,7 @@ $(document).ready(function() {
     $(".read-link").show();
   });
 
-  $(".all").on("click", function () {
+  $(".all").on("click", function (){
     $(".unread-link").show();
     $(".read-link").show();
   });
