@@ -32,7 +32,7 @@ gem 'responders'
 # gem 'capistrano-rails', group: :development
 
 group :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 8.0.0'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda-matchers'
